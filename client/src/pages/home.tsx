@@ -189,7 +189,7 @@ export default function Home() {
         <div className="flex-1 space-y-2 md:space-y-4" data-testid="terminal-output">
           <div className="text-terminal-green">
             <span className="text-terminal-cyan">root@infernalbits:~$</span> 
-            <span data-testid="command-1">{typingStates.command1 || ''}</span>
+            <span data-testid="command-1"> {typingStates.command1 || ''}</span>
             {activeCommand === 'command1' && <span className="animate-blink cursor">█</span>}
           </div>
           
@@ -204,7 +204,7 @@ export default function Home() {
           {visibleElements.has('line2') && (
             <div className="text-terminal-green">
               <span className="text-terminal-cyan">root@infernalbits:~$</span> 
-              <span data-testid="command-2">{typingStates.command2 || ''}</span>
+              <span data-testid="command-2"> {typingStates.command2 || ''}</span>
               {activeCommand === 'command2' && <span className="animate-blink cursor">█</span>}
             </div>
           )}
@@ -220,7 +220,7 @@ export default function Home() {
           {visibleElements.has('line3') && (
             <div className="text-terminal-green">
               <span className="text-terminal-cyan">root@infernalbits:~$</span> 
-              <span data-testid="command-3">{typingStates.command3 || ''}</span>
+              <span data-testid="command-3"> {typingStates.command3 || ''}</span>
               {activeCommand === 'command3' && <span className="animate-blink cursor">█</span>}
             </div>
           )}
@@ -247,7 +247,7 @@ export default function Home() {
           {visibleElements.has('line4') && (
             <div className="text-terminal-green">
               <span className="text-terminal-cyan">root@infernalbits:~$</span> 
-              <span data-testid="command-4">{typingStates.command4 || ''}</span>
+              <span data-testid="command-4"> {typingStates.command4 || ''}</span>
               {activeCommand === 'command4' && <span className="animate-blink cursor">█</span>}
             </div>
           )}
