@@ -5,6 +5,7 @@ export default function Home() {
   const [typingStates, setTypingStates] = useState<Record<string, string>>({});
   const [foundLinks, setFoundLinks] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [activeCommand, setActiveCommand] = useState<string | null>('command1');
   const matrixRef = useRef<HTMLDivElement>(null);
 
   const commands = [
@@ -60,6 +61,7 @@ export default function Home() {
 
   // Typing animation
   const typeText = (commandId: string, text: string, callback?: () => void) => {
+    setActiveCommand(commandId);
     let i = 0;
     const typeChar = () => {
       if (i < text.length) {
@@ -69,8 +71,12 @@ export default function Home() {
         }));
         i++;
         setTimeout(typeChar, Math.random() * 100 + 50);
-      } else if (callback) {
-        setTimeout(callback, 500);
+      } else {
+        // Remove cursor from this command when typing is complete
+        setActiveCommand(null);
+        if (callback) {
+          setTimeout(callback, 500);
+        }
       }
     };
     typeChar();
@@ -157,7 +163,7 @@ export default function Home() {
         {/* Terminal Header */}
         <div className="mb-6 md:mb-8">
           <div className="text-terminal-cyan text-sm mb-2">
-            <span className="animate-blink">█</span> SECURE TERMINAL ACCESS - INFERNALBITS SYSTEMS
+            █ SECURE TERMINAL ACCESS - INFERNALBITS SYSTEMS
           </div>
           <div className="text-terminal-dim text-xs">
             Connection established... Encryption: AES-256 | Status: AUTHENTICATED
@@ -184,7 +190,7 @@ export default function Home() {
           <div className="text-terminal-green">
             <span className="text-terminal-cyan">root@infernalbits:~$</span> 
             <span data-testid="command-1">{typingStates.command1 || ''}</span>
-            <span className="animate-blink cursor">█</span>
+            {activeCommand === 'command1' && <span className="animate-blink cursor">█</span>}
           </div>
           
           {visibleElements.has('output1') && (
@@ -199,7 +205,7 @@ export default function Home() {
             <div className="text-terminal-green">
               <span className="text-terminal-cyan">root@infernalbits:~$</span> 
               <span data-testid="command-2">{typingStates.command2 || ''}</span>
-              <span className="animate-blink cursor">█</span>
+              {activeCommand === 'command2' && <span className="animate-blink cursor">█</span>}
             </div>
           )}
           
@@ -215,7 +221,7 @@ export default function Home() {
             <div className="text-terminal-green">
               <span className="text-terminal-cyan">root@infernalbits:~$</span> 
               <span data-testid="command-3">{typingStates.command3 || ''}</span>
-              <span className="animate-blink cursor">█</span>
+              {activeCommand === 'command3' && <span className="animate-blink cursor">█</span>}
             </div>
           )}
           
@@ -242,7 +248,7 @@ export default function Home() {
             <div className="text-terminal-green">
               <span className="text-terminal-cyan">root@infernalbits:~$</span> 
               <span data-testid="command-4">{typingStates.command4 || ''}</span>
-              <span className="animate-blink cursor">█</span>
+              {activeCommand === 'command4' && <span className="animate-blink cursor">█</span>}
             </div>
           )}
           
