@@ -50,14 +50,14 @@
   --tracking-normal: 0em;
   --spacing: 0.25rem;
   
-  /* Terminal color scheme */
-  --terminal-green: hsl(120 100% 50%);
-  --terminal-dark-green: hsl(120 100% 40%);
-  --terminal-muted-green: hsl(120 100% 26.7%);
+  /* Terminal color scheme - Black Metal iTerm2 theme */
+  --terminal-green: hsl(0 27% 73%);
+  --terminal-dark-green: hsl(179 21% 36%);
+  --terminal-muted-green: hsl(0 22% 51%);
   --terminal-bg: hsl(0 0% 0%);
-  --terminal-bg-alt: hsl(0 0% 3.9%);
-  --terminal-cyan: hsl(180 100% 50%);
-  --terminal-dim: hsl(120 100% 13.3%);
+  --terminal-bg-alt: hsl(0 0% 5%);
+  --terminal-cyan: hsl(0 0% 67%);
+  --terminal-dim: hsl(0 0% 20%);
 }
 
 .dark {
