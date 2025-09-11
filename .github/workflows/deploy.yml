@@ -51,30 +51,34 @@ jobs:
           ls -la dist/ || echo "dist/ doesn't exist"
           ls -la dist/public/ || echo "dist/public/ doesn't exist"
 
-          # Create a temporary directory for deployment
-          mkdir temp_deploy
-
-          # Copy built files to temp directory (with error handling)
-          if [ -d "dist/public" ] && [ "$(ls -A dist/public)" ]; then
-            cp -r dist/public/* temp_deploy/
-            echo "Files copied to temp_deploy successfully"
-          else
+          # Verify build files exist
+          if [ ! -d "dist/public" ] || [ -z "$(ls -A dist/public)" ]; then
             echo "ERROR: No files found in dist/public/"
             exit 1
           fi
 
-          # Add 404.html for SPA routing
-          cp temp_deploy/index.html temp_deploy/404.html
+          # Create temp directory OUTSIDE the git working tree
+          mkdir -p /tmp/deploy_files
 
-          # Switch to main branch
+          # Copy built files to temp directory
+          cp -r dist/public/* /tmp/deploy_files/
+          echo "Files copied to /tmp/deploy_files successfully"
+
+          # Add 404.html for SPA routing
+          cp /tmp/deploy_files/index.html /tmp/deploy_files/404.html
+
+          # Switch to main branch (this will clear working directory)
           git checkout -B main
 
           # Remove all files except .git
           find . -name ".git" -prune -o -type f -exec rm -f {} +
           find . -name ".git" -prune -o -type d -empty -exec rmdir {} + 2>/dev/null || true
 
-          # Copy built files to root
-          cp -r temp_deploy/* .
+          # Copy built files from temp to root
+          cp -r /tmp/deploy_files/* .
+
+          # Clean up temp directory
+          rm -rf /tmp/deploy_files
 
           # Add and commit all files
           git add .
