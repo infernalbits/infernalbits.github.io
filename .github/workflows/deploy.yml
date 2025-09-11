@@ -1,35 +1,27 @@
-# Deploy to GitHub Pages
-name: Deploy to GitHub Pages
+# Build and Deploy to GitHub Pages (username.github.io)
+name: Build and Deploy
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes to source branch
   push:
-    branches: ['main']
+    branches: ['source']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions to allow pushing to main branch
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
+      - name: Checkout source branch
         uses: actions/checkout@v4
+        with:
+          ref: source
       
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -42,28 +34,39 @@ jobs:
       
       - name: Build for GitHub Pages
         run: |
-          # Extract repository name for base path
-          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)
-          # Build frontend only with repository name as base path
-          npx vite build --base=/$REPO_NAME/
-          # Create root deployment directory
-          mkdir -p deploy
-          # Copy all built files to deployment root
-          cp -r dist/public/* deploy/
-          # Copy index.html to 404.html for SPA routing support
-          cp deploy/index.html deploy/404.html
-          # List contents for debugging
-          ls -la deploy/
+          # Build for root path (user pages) and override output directory
+          npx vite build --base=/ --outDir=dist
+          # List built files (should be in dist/ now, not dist/public/)
+          ls -la dist/
       
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload deploy directory to root
-          path: './deploy'
-      
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to main branch
+        run: |
+          # Configure git
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          
+          # Create a temporary directory for deployment
+          mkdir temp_deploy
+          
+          # Copy built files to temp directory
+          cp -r dist/* temp_deploy/
+          
+          # Add 404.html for SPA routing
+          cp temp_deploy/index.html temp_deploy/404.html
+          
+          # Switch to main branch
+          git checkout -B main
+          
+          # Remove all files except .git
+          find . -name ".git" -prune -o -type f -delete
+          find . -name ".git" -prune -o -type d -empty -delete 2>/dev/null || true
+          
+          # Copy built files to root
+          cp -r temp_deploy/* .
+          
+          # Add and commit all files
+          git add .
+          git commit -m "Deploy InfernalBits coming soon page"
+          
+          # Push to main branch
+          git push origin main --force
