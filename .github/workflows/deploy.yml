@@ -4,7 +4,7 @@ name: Build and Deploy
 on:
   # Runs on pushes to source branch
   push:
-    branches: ['source']
+    branches: ["source"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,57 +16,57 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout source branch
         uses: actions/checkout@v4
         with:
           ref: source
-      
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-      
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build for GitHub Pages
         run: |
           # Build for root path (user pages)
           npx vite build --base=/
           # List built files (will be in dist/public/ as per vite.config.ts)
           ls -la dist/public/
-      
+
       - name: Deploy to main branch
         run: |
           # Configure git
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          
+
           # Create a temporary directory for deployment
           mkdir temp_deploy
-          
+
           # Copy built files to temp directory
           cp -r dist/public/* temp_deploy/
-          
+
           # Add 404.html for SPA routing
           cp temp_deploy/index.html temp_deploy/404.html
-          
+
           # Switch to main branch
           git checkout -B main
-          
+
           # Remove all files except .git
-          find . -name ".git" -prune -o -type f -delete
-          find . -name ".git" -prune -o -type d -empty -delete 2>/dev/null || true
-          
+          find . -name ".git" -prune -o -type f -exec rm -f {} +
+          find . -name ".git" -prune -o -type d -empty -exec rmdir {} + 2>/dev/null || true
+
           # Copy built files to root
           cp -r temp_deploy/* .
-          
+
           # Add and commit all files
           git add .
           git commit -m "Deploy InfernalBits coming soon page"
-          
+
           # Push to main branch
           git push origin main --force
