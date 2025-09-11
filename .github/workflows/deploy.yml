@@ -45,11 +45,23 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
 
+          # Debug: Check what was actually built
+          echo "=== Checking build output ==="
+          find . -name "dist" -type d
+          ls -la dist/ || echo "dist/ doesn't exist"
+          ls -la dist/public/ || echo "dist/public/ doesn't exist"
+
           # Create a temporary directory for deployment
           mkdir temp_deploy
 
-          # Copy built files to temp directory
-          cp -r dist/public/* temp_deploy/
+          # Copy built files to temp directory (with error handling)
+          if [ -d "dist/public" ] && [ "$(ls -A dist/public)" ]; then
+            cp -r dist/public/* temp_deploy/
+            echo "Files copied to temp_deploy successfully"
+          else
+            echo "ERROR: No files found in dist/public/"
+            exit 1
+          fi
 
           # Add 404.html for SPA routing
           cp temp_deploy/index.html temp_deploy/404.html
