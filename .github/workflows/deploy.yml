@@ -34,10 +34,10 @@ jobs:
       
       - name: Build for GitHub Pages
         run: |
-          # Build for root path (user pages) and override output directory
-          npx vite build --base=/ --outDir=dist
-          # List built files (should be in dist/ now, not dist/public/)
-          ls -la dist/
+          # Build for root path (user pages)
+          npx vite build --base=/
+          # List built files (will be in dist/public/ as per vite.config.ts)
+          ls -la dist/public/
       
       - name: Deploy to main branch
         run: |
@@ -49,7 +49,7 @@ jobs:
           mkdir temp_deploy
           
           # Copy built files to temp directory
-          cp -r dist/* temp_deploy/
+          cp -r dist/public/* temp_deploy/
           
           # Add 404.html for SPA routing
           cp temp_deploy/index.html temp_deploy/404.html

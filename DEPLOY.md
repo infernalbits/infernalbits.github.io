@@ -49,17 +49,17 @@ If you prefer to deploy manually:
 
 2. **Build for User Pages:**
    ```bash
-   # Build for root path (user pages) and override output directory
-   npx vite build --base=/ --outDir=dist
+   # Build for root path (user pages)
+   npx vite build --base=/
    
    # Add SPA routing support  
-   cp dist/index.html dist/404.html
+   cp dist/public/index.html dist/public/404.html
    ```
 
 3. **Deploy to main branch:**
    ```bash
    # Deploy built files to main branch root
-   npx gh-pages -d dist -b main
+   npx gh-pages -d dist/public -b main
    ```
 
 4. **GitHub Pages serves automatically:**
@@ -93,7 +93,7 @@ If you want to use a custom domain like `infernalbits.com`:
 
 - **Development**: Run `npm run dev` for full-stack development with hot reload
 - **Production**: The GitHub Pages deployment only includes the frontend static files
-- **Local testing**: You can test the built version by serving the `dist` folder
+- **Local testing**: You can test the built version by serving the `dist/public` folder
 
 ## Troubleshooting
 
