@@ -9,10 +9,10 @@ export default function Home() {
   const matrixRef = useRef<HTMLDivElement>(null);
 
   const commands = [
-    { id: 'command1', text: 'sudo access --secure --stealth', delay: 1000, output: 'output1', nextLine: 'line2' },
-    { id: 'command2', text: 'nmap -sS infernalbits.local', delay: 4000, output: 'output2', nextLine: 'line3' },
-    { id: 'command3', text: 'cat /etc/infernalbits/status.txt', delay: 8000, output: 'output3', nextLine: 'line4' },
-    { id: 'command4', text: 'find . -name "*.hidden" -type f', delay: 14000, output: 'hiddenLinkArea', nextLine: null }
+    { id: 'command1', text: 'eval $(remote-protocol --secure --shell --bind localhost:2342)', delay: 1000, output: 'output1', nextLine: 'line2' },
+    { id: 'command2', text: 'scan-asp infernalbits.localnet', delay: 4000, output: 'output2', nextLine: 'line3' },
+    { id: 'command3', text: 'systemctl start tor-node', delay: 8000, output: 'output3', nextLine: 'line4' },
+    { id: 'command4', text: 'fd -tf -H hidden.* .', delay: 14000, output: 'hiddenLinkArea', nextLine: null }
   ];
 
   // Matrix background effect
