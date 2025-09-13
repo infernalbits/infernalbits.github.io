@@ -163,32 +163,28 @@ export default function Home() {
         {/* Terminal Header */}
         <div className="mb-6 md:mb-8">
           <div className="text-terminal-cyan text-sm mb-2">
-            █ SECURE TERMINAL ACCESS - INFERNALBITS SYSTEMS
+            █ SECURE TERMINAL ACCESS █ INFERNALBITS █ THE DESECRATION OF DATA HAS BEGUN █
           </div>
           <div className="text-terminal-dim text-xs">
-            Connection established... Encryption: AES-256 | Status: AUTHENTICATED
+            Attempting to bypass Authentication...█ | Encryption: AES-256 Keystore: infernal-codex | Status: PrivKey Morally Corrupted... 
           </div>
         </div>
         
         {/* ASCII Art Logo */}
         <div className="mb-8 md:mb-12 font-mono text-xs md:text-sm" data-testid="ascii-logo">
           <pre className="terminal-text leading-tight">
-{` ██▓ ███▄    █   █████▒▓█████  ██▀███   ███▄    █  ▄▄▄       ██▓      ▄▄▄▄    ██▓▄▄▄█████▓  ██████ 
-▓██▒ ██ ▀█   █ ▓██   ▒ ▓█   ▀ ▓██ ▒ ██▒ ██ ▀█   █ ▒████▄    ▓██▒     ▓█████▄ ▓██▒▓  ██▒ ▓▒▒██    ▒ 
-▒██▒▓██  ▀█ ██▒▒████ ░ ▒███   ▓██ ░▄█ ▒▓██  ▀█ ██▒▒██  ▀█▄  ▒██░     ▒██▒ ▄██▒██▒▒ ▓██░ ▒░░ ▓██▄   
-░██░▓██▒  ▐▌██▒░▓█▒  ░ ▒▓█  ▄ ▒██▀▀█▄  ▓██▒  ▐▌██▒░██▄▄▄▄██ ▒██░     ▒██░█▀  ░██░░ ▓██▓ ░   ▒   ██▒
-░██░▒██░   ▓██░░▒█░    ░▒████▒░██▓ ▒██▒▒██░   ▓██░ ▓█   ▓██▒░██████▒ ░▓█  ▀█▓░██░  ▒██▒ ░ ▒██████▒▒
-░▓  ░ ▒░   ▒ ▒  ▒ ░    ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ▒ ▒  ▒▒   ▓▒█░░ ▒░▓  ░ ░▒▓███▀▒░▓    ▒ ░░   ▒ ▒▓▒ ▒ ░
- ▒ ░░ ░░   ░ ▒░ ░       ░ ░  ░  ░▒ ░ ▒░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░ ▒  ░ ▒░▒   ░  ▒ ░    ░    ░ ░▒  ░ ░
- ▒ ░   ░   ░ ░  ░ ░       ░     ░░   ░    ░   ░ ░   ░   ▒     ░ ░     ░    ░  ▒ ░  ░      ░  ░  ░  
- ░           ░            ░  ░   ░              ░       ░  ░    ░  ░  ░         ░                ░`}
+{`▪   ▐ ▄ ·▄▄▄▄▄▄ .▄▄▄   ▐ ▄  ▄▄▄· ▄▄▌  ▄▄▄▄· ▪  ▄▄▄▄▄.▄▄ ·     ▄▄·       • ▌ ▄ ·. 
+██ •█▌▐█▐▄▄·▀▄.▀·▀▄ █·•█▌▐█▐█ ▀█ ██•  ▐█ ▀█▪██ •██  ▐█ ▀.    ▐█ ▌▪▪     ·██ ▐███▪
+▐█·▐█▐▐▌██▪ ▐▀▀▪▄▐▀▀▄ ▐█▐▐▌▄█▀▀█ ██▪  ▐█▀▀█▄▐█· ▐█.▪▄▀▀▀█▄   ██ ▄▄ ▄█▀▄ ▐█ ▌▐▌▐█·
+▐█▌██▐█▌██▌.▐█▄▄▌▐█•█▌██▐█▌▐█ ▪▐▌▐█▌▐▌██▄▪▐█▐█▌ ▐█▌·▐█▄▪▐█   ▐███▌▐█▌.▐▌██ ██▌▐█▌
+▀▀▀▀▀ █▪▀▀▀  ▀▀▀ .▀  ▀▀▀ █▪ ▀  ▀ .▀▀▀ ·▀▀▀▀ ▀▀▀ ▀▀▀  ▀▀▀▀  ▀ ·▀▀▀  ▀█▄▀▪▀▀  █▪▀▀▀`}
           </pre>
         </div>
         
         {/* Terminal Output */}
         <div className="flex-1 space-y-2 md:space-y-4" data-testid="terminal-output">
           <div className="text-terminal-green">
-            <span className="text-terminal-cyan">root@infernalbits:~$</span> 
+            <span className="text-terminal-cyan">bits@infernalcodex:~$</span> 
             <span data-testid="command-1"> {typingStates.command1 || ''}</span>
             {activeCommand === 'command1' && <span className="animate-blink cursor">█</span>}
           </div>
@@ -197,13 +193,14 @@ export default function Home() {
             <div className="text-terminal-dark-green ml-4" data-testid="output-1">
               Initializing secure connection...<br/>
               Bypassing security protocols...<br/>
+              Kernel tainted by brimstone...<br/>
               <span className="text-terminal-cyan">█ █ █</span> AUTHORIZED ACCESS GRANTED <span className="text-terminal-cyan">█ █ █</span>
             </div>
           )}
           
           {visibleElements.has('line2') && (
             <div className="text-terminal-green">
-              <span className="text-terminal-cyan">root@infernalbits:~$</span> 
+              <span className="text-terminal-cyan">bits@infernalcodex:~$</span> 
               <span data-testid="command-2"> {typingStates.command2 || ''}</span>
               {activeCommand === 'command2' && <span className="animate-blink cursor">█</span>}
             </div>
@@ -213,13 +210,15 @@ export default function Home() {
             <div className="text-terminal-dark-green ml-4" data-testid="output-2">
               Scanning network topology...<br/>
               Identifying secure channels...<br/>
-              ████████████████ 100% COMPLETE
+              ███████ 50% SCANNING TOR EXIT NODES
+              ███████████ 75% RANDOMIZING GPS DATA
+              ██████████████████ 100% COMPLETE BULLSHIT
             </div>
           )}
           
           {visibleElements.has('line3') && (
             <div className="text-terminal-green">
-              <span className="text-terminal-cyan">root@infernalbits:~$</span> 
+              <span className="text-terminal-cyan">bits@infernalcodex:~$</span> 
               <span data-testid="command-3"> {typingStates.command3 || ''}</span>
               {activeCommand === 'command3' && <span className="animate-blink cursor">█</span>}
             </div>
@@ -229,16 +228,18 @@ export default function Home() {
             <div className="text-terminal-muted-green ml-4" data-testid="output-3">
               <div className="border border-terminal-dark-green p-4 mt-4 bg-terminal-bg-alt">
                 <div className="text-terminal-cyan text-center text-lg md:text-xl mb-4">
-                  ◢◤ INFERNALBITS COMING SOON ◢◤
+                  ◢◤ INFERNALBITS.COM COMING SOON TO DEFILE YOUR DATA ◢◤
                 </div>
                 <div className="text-sm md:text-base space-y-2">
                   <p>► SYSTEM STATUS: Under Development</p>
-                  <p>► DEPLOYMENT: Q1 2024</p>
-                  <p>► SECURITY LEVEL: Maximum</p>
-                  <p>► ACCESS: Invitation Only</p>
+                  <p>► DEPLOYMENT: Q1 2026</p>
+                  <p>► SECURITY LEVEL: PRISMATIC STINGRAY DEFIANT</p>
+                  <p>► ACCESS: Evil Incarnate</p>
                 </div>
                 <div className="text-terminal-dim text-xs mt-4 text-center">
-                  For authorized personnel only. Unauthorized access is prohibited.
+                  For un-authorized infiltration only. Authorized access available for XMR Deposit
+                  BTC 
+                  XMR .
                 </div>
               </div>
             </div>
@@ -246,7 +247,7 @@ export default function Home() {
           
           {visibleElements.has('line4') && (
             <div className="text-terminal-green">
-              <span className="text-terminal-cyan">root@infernalbits:~$</span> 
+              <span className="text-terminal-cyan">bits@infernalcodex:~$</span> 
               <span data-testid="command-4"> {typingStates.command4 || ''}</span>
               {activeCommand === 'command4' && <span className="animate-blink cursor">█</span>}
             </div>
@@ -264,8 +265,8 @@ export default function Home() {
         
         {/* Footer */}
         <div className="mt-8 text-terminal-dim text-xs text-center">
-          <p>INFERNALBITS SECURITY SYSTEMS © 2024 | TERMINAL v2.1.337</p>
-          <p className="mt-1">Connection secured via quantum encryption</p>
+          <p>INFERNALBITS.COM SECURITY SYSTEMS © 2024 | FAKE-TERMINAL v2.1.337</p>
+          <p className="mt-1">Connection secured via MorningStar encryption</p>
         </div>
       </div>
       
@@ -276,7 +277,7 @@ export default function Home() {
             <div className="text-center">
               <div className="text-terminal-cyan text-xl mb-4">◢◤ ACCESS POINT FOUND ◢◤</div>
               <div className="text-terminal-green mb-6">
-                You have discovered a hidden entry point.<br/>
+                You have discovered a hidden portal to the abyss.<br/>
                 Proceed with caution.
               </div>
               <div className="space-y-4">
@@ -285,14 +286,14 @@ export default function Home() {
                   className="block border border-terminal-dark-green bg-terminal-bg-alt text-terminal-cyan px-4 py-2 hover:bg-terminal-dark-green hover:text-black transition-colors"
                   data-testid="enter-portal-link"
                 >
-                  ► ENTER SECURE PORTAL
+                  ► ENTER INFERNAL PORTAL 
                 </a>
                 <button 
                   onClick={() => setShowModal(false)}
                   className="block w-full border border-terminal-dim text-terminal-dim px-4 py-2 hover:border-terminal-green hover:text-terminal-green transition-colors"
                   data-testid="return-terminal-button"
                 >
-                  ► RETURN TO TERMINAL
+                  ► RETURN TO FAKE-TERMINAL
                 </button>
               </div>
             </div>
