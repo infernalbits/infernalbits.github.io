@@ -135,7 +135,7 @@
   font-family: 'Courier New', monospace;
   font-size: 14px;
   color: var(--terminal-bg);
-  animation: matrix 2s linear infinite;
+  animation: matrix 20s linear infinite;
   opacity: 0.5;
 }
 
