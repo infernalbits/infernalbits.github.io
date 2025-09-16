@@ -24,9 +24,9 @@ export default function Home() {
       
       const column = document.createElement('div');
       column.className = 'matrix-column';
-      column.style.left = Math.random() * 90 + '%';
-      column.style.animationDelay = Math.random() * 2 + 's';
-      column.style.animationDuration = (Math.random() * 20 + 25) + 's';
+      column.style.left = Math.random() * 100 + '%';
+      column.style.animationDelay = Math.random() * 1 + 's';
+      column.style.animationDuration = (Math.random() * 10 + 10) + 's';
       
       let text = '';
       const height = Math.floor(Math.random() * 20) + 10;
