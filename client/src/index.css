@@ -54,8 +54,8 @@
   --terminal-green: hsl(179 21% 36%);
   --terminal-dark-green: hsl(0 27% 73%);
   --terminal-muted-green: hsl(0 22% 51%);
-  --terminal-bg: hsl(0 0% 20%);
-  --terminal-bg-alt: hsl(0 0% 5%);
+  --terminal-bg: hsl(0 0% 80%);
+  --terminal-bg-alt: hsl(0 0% 100%);
   --terminal-cyan: hsl(0 22% 51%);
   --terminal-dim: hsl(0 0% 67%);
 }
