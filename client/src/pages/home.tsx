@@ -171,7 +171,7 @@ export default function Home() {
         </div>
         
         {/* ASCII Art Logo */}
-        <div className="mb-8 md:mb-12 font-mono text-xs md:text-sm animate-flicker" data-testid="ascii-logo">
+        <div className="mb-8 md:mb-12 font-mono text-xs md:text-sm animate-flicker text-terminal-dim" data-testid="ascii-logo">
           <pre className="terminal-text leading-tight">
 {`▪   ▐ ▄ ·▄▄▄▄▄▄ .▄▄▄   ▐ ▄  ▄▄▄· ▄▄▌  ▄▄▄▄· ▪  ▄▄▄▄▄.▄▄ ·     ▄▄·       • ▌ ▄ ·. 
 ██ •█▌▐█▐▄▄·▀▄.▀·▀▄ █·•█▌▐█▐█ ▀█ ██•  ▐█ ▀█▪██ •██  ▐█ ▀.    ▐█ ▌▪▪     ·██ ▐███▪
