@@ -190,7 +190,7 @@ export default function Home() {
           </div>
           
           {visibleElements.has('output1') && (
-            <div className="text-terminal-dark-green ml-4" data-testid="output-1">
+            <div className="text-terminal-dark-dim ml-4" data-testid="output-1">
               Initializing secure connection...<br/>
               Bypassing security protocols...<br/>
               Kernel tainted by brimstone...<br/>
@@ -207,12 +207,12 @@ export default function Home() {
           )}
           
           {visibleElements.has('output2') && (
-            <div className="text-terminal-dark-green ml-4" data-testid="output-2">
-              █ 10% [Scanning network topology...]<br/>
-              ███ 25% [Identifying secure channels...]<br/>
-              ███████ 50% [SCANNING TOR EXIT NODES]<br/>
-              ███████████ 75% [RANDOMIZING GPS DATA]<br/>
-              ██████████████████ 100% [COMPLETE NONSENSE]<br/>
+            <div className="text-terminal-dark-dim ml-4" data-testid="output-2">
+              █ 10% <span className="text-terminal-cyan">[Scanning network topology...]</span><br/>
+              ███ 25% <span className="text-terminal-cyan">[Identifying secure channels...]</span><br/>
+              ███████ 50% <span className="text-terminal-cyan">[SCANNING TOR EXIT NODES]</span><br/>
+              ███████████ 75% <span className="text-terminal-cyan">[RANDOMIZING GPS DATA]</span><br/>
+              ██████████████████ 100% <span className="text-terminal-cyan">[COMPLETE NONSENSE]</span><br/>
             </div>
           )}
           
