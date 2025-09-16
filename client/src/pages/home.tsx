@@ -208,11 +208,11 @@ export default function Home() {
           
           {visibleElements.has('output2') && (
             <div className="text-terminal-dark-green ml-4" data-testid="output-2">
-              Scanning network topology...<br/>
-              Identifying secure channels...<br/>
-              ███████ 50% SCANNING TOR EXIT NODES
-              ███████████ 75% RANDOMIZING GPS DATA
-              ██████████████████ 100% COMPLETE BULLSHIT
+              █ 10% [Scanning network topology...]<br/>
+              ███ 25% [Identifying secure channels...]<br/>
+              ███████ 50% [SCANNING TOR EXIT NODES]<br/>
+              ███████████ 75% [RANDOMIZING GPS DATA]<br/>
+              ██████████████████ 100% [COMPLETE NONSENSE]<br/>
             </div>
           )}
           
