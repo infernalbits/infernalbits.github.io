@@ -51,12 +51,12 @@
   --spacing: 0.25rem;
   
   /* Terminal color scheme - Black Metal iTerm2 theme */
-  --terminal-green: hsl(179 21% 36%);
-  --terminal-dark-green: hsl(0 27% 73%);
+  --terminal-dark-green: hsl(0 21% 36%);
+  --terminal-green: hsl(0 27% 73%);
   --terminal-muted-green: hsl(0 22% 51%);
   --terminal-bg: hsl(0 0% 8%);
-  --terminal-bg-alt: hsl(0 0% 50%);
-  --terminal-cyan: hsl(0 22% 51%);
+  --terminal-bg-alt: hsl(0 0% 5%);
+  --terminal-cyan: hsl(0 0% 81%);
   --terminal-dim: hsl(0 0% 67%);
 }
 
