@@ -136,7 +136,7 @@
   font-size: 14px;
   color: var(--terminal-bg);
   animation: matrix 20s linear infinite;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .scanlines {
@@ -197,7 +197,7 @@
   25% { transform: translateY(-50vh); }
   50% { transform: translateY(0vh); }
   75% { transform: translateY(50vh); }
-  100% { transform: translateY(100vh); }
+  100% { transform: translateY(1000vh); }
 }
 
 @keyframes flicker {
