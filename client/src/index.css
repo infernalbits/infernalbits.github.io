@@ -193,11 +193,10 @@
 }
 
 @keyframes matrix {
-  0% { transform: translateY(-100vh); }
   25% { transform: translateY(-50vh); }
   50% { transform: translateY(0vh); }
   75% { transform: translateY(50vh); }
-  100% { transform: translateY(1000vh); }
+  100% { transform: translateY(100vh); }
 }
 
 @keyframes flicker {

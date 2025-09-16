@@ -17,7 +17,7 @@ export default function Home() {
 
   // Matrix background effect
   useEffect(() => {
-    const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    const characters = '0123456789<>;:,.ソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
     
     const createMatrixColumn = () => {
       if (!matrixRef.current) return;
@@ -120,7 +120,7 @@ export default function Home() {
       setShowModal(true);
     } else {
       // Visual feedback
-      document.body.style.animation = 'flicker 0.1s ease-in-out 3';
+      document.body.style.animation = 'flicker 1s ease-in-out 3';
       setTimeout(() => {
         document.body.style.animation = '';
       }, 300);
