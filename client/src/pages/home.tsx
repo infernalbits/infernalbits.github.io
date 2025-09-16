@@ -120,7 +120,7 @@ export default function Home() {
       setShowModal(true);
     } else {
       // Visual feedback
-      document.body.style.animation = 'flicker 1s ease-in-out 3';
+      document.body.style.animation = '';
       setTimeout(() => {
         document.body.style.animation = '';
       }, 300);
