@@ -135,8 +135,8 @@
   font-family: 'Courier New', monospace;
   font-size: 14px;
   color: var(--terminal-dim);
-  animation: matrix 20s linear infinite;
-  opacity: 0.3;
+  animation: matrix 2s linear infinite;
+  opacity: 0.5;
 }
 
 .scanlines {
@@ -173,7 +173,7 @@
   background: rgba(0, 255, 0, 0.1);
   width: 20px;
   height: 20px;
-  cursor: pointer;
+  cursor: pointer;a
   transition: all 0.3s ease;
 }
 
@@ -194,6 +194,9 @@
 
 @keyframes matrix {
   0% { transform: translateY(-100vh); }
+  25% { transform: translateY(-50vh); }
+  50% { transform: translateY(0vh); }
+  75% { transform: translateY(50vh); }
   100% { transform: translateY(100vh); }
 }
 
