@@ -24,9 +24,9 @@ export default function Home() {
       
       const column = document.createElement('div');
       column.className = 'matrix-column';
-      column.style.left = Math.random() * 100 + '%';
-      column.style.animationDelay = Math.random() * 20 + 's';
-      column.style.animationDuration = (Math.random() * 10 + 10) + 's';
+      column.style.left = Math.random() * 90 + '%';
+      column.style.animationDelay = Math.random() * 2 + 's';
+      column.style.animationDuration = (Math.random() * 20 + 25) + 's';
       
       let text = '';
       const height = Math.floor(Math.random() * 20) + 10;
@@ -159,7 +159,7 @@ export default function Home() {
       />
       
       {/* Main Terminal Interface */}
-      <div className="relative z-20 p-4 md:p-8 min-h-screen flex flex-col animate-flicker">
+      <div className="relative z-20 p-4 md:p-8 min-h-screen flex flex-col ">
         {/* Terminal Header */}
         <div className="mb-6 md:mb-8">
           <div className="text-terminal-cyan text-sm mb-2">
@@ -171,7 +171,7 @@ export default function Home() {
         </div>
         
         {/* ASCII Art Logo */}
-        <div className="mb-8 md:mb-12 font-mono text-xs md:text-sm" data-testid="ascii-logo">
+        <div className="mb-8 md:mb-12 font-mono text-xs md:text-sm animate-flicker" data-testid="ascii-logo">
           <pre className="terminal-text leading-tight">
 {`▪   ▐ ▄ ·▄▄▄▄▄▄ .▄▄▄   ▐ ▄  ▄▄▄· ▄▄▌  ▄▄▄▄· ▪  ▄▄▄▄▄.▄▄ ·     ▄▄·       • ▌ ▄ ·. 
 ██ •█▌▐█▐▄▄·▀▄.▀·▀▄ █·•█▌▐█▐█ ▀█ ██•  ▐█ ▀█▪██ •██  ▐█ ▀.    ▐█ ▌▪▪     ·██ ▐███▪

@@ -133,10 +133,10 @@
   position: absolute;
   top: -100%;
   font-family: 'Courier New', monospace;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--terminal-bg);
-  animation: matrix 20s linear infinite;
-  opacity: 0.75;
+  animation: matrix 200ms linear infinite;
+  opacity: 0.35;
 }
 
 .scanlines {
@@ -193,13 +193,13 @@
 }
 
 @keyframes matrix {
-  25% { transform: translateY(-50vh); }
-  50% { transform: translateY(0vh); }
-  75% { transform: translateY(50vh); }
+  0% { transform: translateY(-50vh); }
+  10% { transform: translateY(0vh); }
+  55% { transform: translateY(50vh); }
   100% { transform: translateY(100vh); }
 }
 
 @keyframes flicker {
-  0% { opacity: 1; }
-  100% { opacity: 0.55; }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.55; }
 }
